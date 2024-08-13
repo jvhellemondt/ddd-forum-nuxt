@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   unocss: {
     preflight: true,
   },
-  modules: ["@unocss/nuxt"],
+  modules: ["@unocss/nuxt", "@nuxt/image"],
   typescript: {
     strict: true,
   },
