@@ -1,0 +1,14 @@
+html,
+body,
+#__nuxt {
+	height: 100vh;
+	font-size: 12pt;
+	font-family: 'Arial', sans-serif;
+	overflow-scrolling: auto;
+	overscroll-behavior-y: contain;
+	background: #f6f6f6;
+}
+
+.scroll-lock {
+	overflow: hidden;
+}

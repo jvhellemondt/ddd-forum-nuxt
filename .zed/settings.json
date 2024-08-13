@@ -1,0 +1,133 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "assistant": {
+    "version": "1",
+    "provider": {
+      "name": "openai",
+      "default_model": "gpt-4o",
+      "available_models": []
+    }
+  },
+  "base_keymap": "JetBrains",
+  "theme": "Ayu Dark",
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
+  "nightly": {
+    "enabled": true,
+    "channel": "stable"
+  },
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": true
+  },
+  "show_completion_documentation": false,
+  "scroll_beyond_last_line": "off",
+  "tab_size": 2,
+  "cursor_blink": true,
+  "buffer_font_family": "Fira Code",
+  "preferred_line_length": 120,
+  "buffer_line_height": "comfortable",
+  "ui_font_family": "Fira Code",
+  "formatter": "auto",
+  "autosave": "on_focus_change",
+  "autosave_delay": 1500,
+  "autosave_on_focus_change": true,
+  "autosave_on_window_change": true,
+  "autosave_on_build": true,
+  "autosave_on_build_delay": 1500,
+  "autosave_on_build_events": ["build", "run", "debug"],
+  "autosave_on_build_events_delay": 1500,
+  "vim_mode": false,
+  "confirm_quit": false,
+  "hover_popover_enabled": true,
+  "show_copilot_suggestions": true,
+  "inlay_hints": {
+    "enabled": true,
+    "typeHints": true,
+    "parameterHints": true,
+    "chainingHints": true,
+    "show_type_hints": false
+  },
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": false,
+    "env": {},
+    "font_family": "Fira Code",
+    "font_features": {},
+    "font_size": 11,
+    "option_as_meta": false,
+    "shell": "system",
+    "working_directory": "current_project_directory"
+  },
+  "git": {
+    "enabled": true,
+    "autoFetch": true,
+    "autoFetchInterval": 300,
+    "autoFetchOnFocus": true,
+    "autoFetchOnWindowChange": true,
+    "autoFetchOnBuild": true,
+    "git_status": true,
+    "autoFetchOnBuildEvents": ["build", "run", "debug"],
+    "autoFetchOnBuildEventsDelay": 1500,
+    "autoFetchOnBuildDelay": 1500,
+    "git_gutter": "tracked_files"
+  },
+  "linter": "biome",
+  "bracket_pairing": "always",
+  "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": false
+      },
+      "format_on_save": "on",
+      "preferred_line_length": 120,
+      "soft_wrap": "preferred_line_length",
+      "remove_trailing_whitespace_on_save": true
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": false
+      },
+      "format_on_save": "on",
+      "preferred_line_length": 120,
+      "soft_wrap": "preferred_line_length",
+      "remove_trailing_whitespace_on_save": true
+    },
+    "JSON": {
+      "tab_size": 4
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": false
+      },
+      "format_on_save": "on",
+      "preferred_line_length": 120,
+      "soft_wrap": "preferred_line_length",
+      "remove_trailing_whitespace_on_save": true
+    }
+  },
+  "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": true,
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true
+        }
+      }
+    }
+  }
+}
