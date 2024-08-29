@@ -1,5 +1,11 @@
 <template>
-  <div id="app-logo" class="max-w-16">
-    <NuxtImg src="/ddd-forum-logo.png" alt="DDD-Forum" />
+  <div
+    id="app-logo"
+    class="max-w-16"
+  >
+    <NuxtImg
+      src="/ddd-forum-logo.png"
+      alt="DDD-Forum"
+    />
   </div>
 </template>
