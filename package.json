@@ -17,6 +17,7 @@
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/i18n": "^8.5.1",
+    "@pinia/nuxt": "^0.5.4",
     "date-fns": "^3.6.0",
     "nuxt": "^3.12.4",
     "oxide.ts": "latest",

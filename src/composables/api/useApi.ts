@@ -24,8 +24,8 @@ export const useApi = () => {
         ]
       }
     },
-    register: (input: RegistrationInput) => {
-      return input
+    register: async (input: RegistrationInput) => {
+      return Promise.resolve(input)
     }
   }
 

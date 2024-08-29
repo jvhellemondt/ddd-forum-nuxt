@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   unocss: {
     preflight: true,
   },
-  modules: ['@unocss/nuxt', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n'],
+  modules: ['@unocss/nuxt', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n', '@pinia/nuxt'],
   eslint: {
     config: {
       stylistic: true,

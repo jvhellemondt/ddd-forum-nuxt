@@ -7,13 +7,18 @@
     <HeaderTitleAndSubmission />
     <HeaderActionButton
       v-if="shouldShowActionButton"
+      :user="store.user"
     />
   </header>
 </template>
 
 <script setup lang="ts">
+import { useUsers } from '~/stores/auth/user';
+
 const route = useRoute()
 const shouldShowActionButton = computed(() => {
-  return route.path !== '/join'
+  return route.path !== '/auth/register'
 })
+
+const store = useUsers();
 </script>
