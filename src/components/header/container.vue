@@ -7,7 +7,6 @@
     <HeaderTitleAndSubmission />
     <HeaderActionButton
       v-if="shouldShowActionButton"
-      :user="{ username: '@john' }"
     />
   </header>
 </template>

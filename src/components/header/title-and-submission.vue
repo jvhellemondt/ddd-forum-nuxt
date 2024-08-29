@@ -6,10 +6,7 @@
     <h3 class="mb-4">
       Where awesome domain driven designers are made
     </h3>
-    <NuxtLink
-      to="/submit"
-      class="text-purple-400 hover:text-purple-200 font-semibold underline underline-offset-2 decoration-wavy decoration-purple-500 hover:decoration-purple-300 transition duration-200 ease-in-out"
-    >
+    <NuxtLink to="/submit" class="font-medium text-[#646cff] no-underline hover:text-[#535bf2]">
       submit
     </NuxtLink>
   </div>
