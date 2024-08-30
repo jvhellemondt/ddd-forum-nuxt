@@ -14,6 +14,7 @@ const api = useApi()
 const userStore = useUsers()
 const router = useRouter()
 const spinner = useSpinner()
+const snackbar = useSnackbar()
 
 function validateRegistrationSubmission(input: RegistrationInput): RegistrationValidationResult {
   if (input.email.indexOf('@') === -1) return { success: false, errorMessage: 'Email invalid.' }
@@ -26,21 +27,39 @@ function validateRegistrationSubmission(input: RegistrationInput): RegistrationV
 async function handleRegistrationSubmission(input: RegistrationInput): Promise<void> {
   const { success, errorMessage } = validateRegistrationSubmission(input);
   if (!success) {
-    console.error(errorMessage);
+    snackbar.add({
+      type: 'error',
+      text: errorMessage
+    })
     return;
   }
   spinner.toggle(true);
   try {
-    await api.register(input);
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await api.register(input)
     userStore.setUser(input);
+    spinner.toggle(false);
+    snackbar.add({
+      type: 'success',
+      text: 'You have been registered 🚀.'
+    })
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    snackbar.add({
+      type: 'info',
+      text: 'Redirecting to the homepage in 2 seconds.',
+      dense: true,
+      duration: 2000
+    })
+    await new Promise(resolve => setTimeout(resolve, 2000))
     router.push('/');
   }
-  catch (e) {
-    console.error(e);
-  }
-  finally {
+  catch (err) {
     spinner.toggle(false);
+    const { data } = err
+    snackbar.add({
+      title: data.error,
+      type: 'error',
+      text: 'Something went wrong. Please try again.'
+    })
   }
 }
 </script>

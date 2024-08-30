@@ -19,13 +19,16 @@
     "@nuxtjs/i18n": "^8.5.1",
     "@pinia/nuxt": "^0.5.4",
     "date-fns": "^3.6.0",
-    "nuxt": "^3.12.4",
+    "lodash-es": "^4.17.21",
+    "nuxt": "^3.13.0",
+    "nuxt-snackbar": "^1.1.2",
     "oxide.ts": "latest",
     "vue": "latest"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.5.3",
     "@types/bun": "latest",
+    "@types/lodash-es": "^4.17.12",
     "@unocss/nuxt": "^0.62.1",
     "@unocss/preset-wind": "latest",
     "sass-embedded": "^1.77.8",

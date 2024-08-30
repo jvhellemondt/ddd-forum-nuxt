@@ -34,10 +34,10 @@ import type { RegistrationInput } from '~/types/auth/register/RegistrationInput'
 const emit = defineEmits(['submit'])
 
 const formDetails = reactive<RegistrationInput>({
-  email: '',
-  username: '',
-  firstName: '',
-  lastName: '',
+  email: 'john@example.com',
+  username: 'winter-is-coming',
+  firstName: 'John',
+  lastName: 'Snow',
 })
 
 const handleSubmit = () => {

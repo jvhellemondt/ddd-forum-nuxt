@@ -1,9 +1,18 @@
+import { snakeCase } from 'lodash-es';
 import type { RegistrationInput } from '../../types/auth/register/RegistrationInput'
+
+const transformToSnakeCaseBody = (input: object) => {
+  return Object.fromEntries(
+    Object.entries(input).map(
+      ([key, value]) => [snakeCase(key), value]
+    )
+  )
+}
 
 export const useApi = () => {
   return {
     posts: {
-      getPosts: (): Post[] => {
+      async getPosts(): Post[] {
         return [
           {
             title: 'My first post!',
@@ -24,10 +33,13 @@ export const useApi = () => {
         ]
       }
     },
-    register: async (input: RegistrationInput) => {
-      return Promise.resolve(input)
+    async register(input: RegistrationInput) {
+      const registerEndpoint = 'http://localhost:8080/users/create';
+      const body = transformToSnakeCaseBody(input)
+      return await $fetch(registerEndpoint, {
+        method: 'POST',
+        body,
+      })
     }
-  }
-
-  // const { data, status, error, refresh, clear } = await useFetch('/api/auth/login')
+  };
 };

@@ -15,7 +15,20 @@ export default defineNuxtConfig({
   unocss: {
     preflight: true,
   },
-  modules: ['@unocss/nuxt', '@nuxt/image', '@nuxt/eslint', '@nuxtjs/i18n', '@pinia/nuxt'],
+  modules: [
+    '@unocss/nuxt',
+    '@nuxt/image',
+    '@nuxt/eslint',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    'nuxt-snackbar',
+  ],
+  snackbar: {
+    top: true,
+    duration: 3000,
+    groups: true,
+    border: "top"
+  },
   eslint: {
     config: {
       stylistic: true,
