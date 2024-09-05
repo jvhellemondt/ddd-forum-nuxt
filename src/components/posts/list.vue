@@ -1,25 +1,22 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col gap-8">
     <template v-for="post in posts" :key="post.title">
       <div class="flex flex-row">
         <div class="mr-4 flex flex-col justify-center">
-          <div>
+          <div class="flex justify-center">
             <NuxtImg src="/arrow.svg" alt="Arrow-Up" />
           </div>
           <div class="font-bold">{{ computeVoteCount(post.votes) }}</div>
-          <div class="rotate-180">
+          <div class="flex justify-center rotate-180">
             <NuxtImg src="/arrow.svg" alt="Arrow-Up" />
           </div>
         </div>
         <div>
-          <div class="font-bold text-lg">{{ post.title }}</div>
+          <div class="font-bold text-lg">"{{ post.title }}"</div>
           <div class="flex flex-row items-center gap-2">
             <div v-if="post.createdAt">{{ timeAgo(post.createdAt) }}</div>
             <span>|</span>
-            <NuxtLink 
-              :to="`/member/${post.memberPostedBy.user.username}`"
-              class="text-blue-6  hover:text-blue-8"
-            >
+            <NuxtLink :to="`/member/${post.memberPostedBy.user.username}`" class="text-blue-6  hover:text-blue-8">
               by {{ post.memberPostedBy.user.username }}
             </NuxtLink>
             <span>|</span>
