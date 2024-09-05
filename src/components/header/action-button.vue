@@ -9,7 +9,7 @@
         sign out
       </button>
     </div>
-    <NuxtLink v-else to="/auth/register" class="font-medium text-[#646cff] no-underline hover:text-[#535bf2]">
+    <NuxtLink v-else to="/auth/register" class="font-medium no-underline  text-blue-6  hover:text-blue-8">
       sign up!
     </NuxtLink>
   </div>
