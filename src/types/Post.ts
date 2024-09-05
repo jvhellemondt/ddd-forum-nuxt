@@ -1,10 +1,15 @@
 import type { Vote } from './Vote'
 import type { Comment } from './Comment'
 
-export type Post = {
+export interface Post {
+  id: number
+  member_id: number
+  post_type: string
   title: string
-  dateCreated: string
-  memberPostedBy: object
-  comments: Comment[]
+  content: string
   votes: Vote[]
+  member_posted_by: MemberPostedBy
+  comments: Comment[]
+  created_at: string
+  updated_at: string
 }

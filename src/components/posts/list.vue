@@ -14,9 +14,12 @@
         <div>
           <div class="font-bold text-lg">{{ post.title }}</div>
           <div class="flex flex-row items-center gap-2">
-            <div v-if="post.dateCreated">{{ timeAgo(post.dateCreated) }}</div>
+            <div v-if="post.createdAt">{{ timeAgo(post.createdAt) }}</div>
             <span>|</span>
-            <NuxtLink :to="`/member/${post.memberPostedBy.user.username}`">
+            <NuxtLink 
+              :to="`/member/${post.memberPostedBy.user.username}`"
+              class="text-blue-6  hover:text-blue-8"
+            >
               by {{ post.memberPostedBy.user.username }}
             </NuxtLink>
             <span>|</span>
@@ -53,8 +56,7 @@ const computeVoteCount = (votes: Vote[]) => {
 const timeAgo = (dateCreated: string) => formatDistanceToNow(new Date(dateCreated), { addSuffix: true });
 </script>
 
-<i18n lang="json">
-{
+<i18n lang="json">{
   "en": {
     "comment": "comment | comments"
   }

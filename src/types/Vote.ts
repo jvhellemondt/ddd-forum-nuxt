@@ -1,5 +1,8 @@
-export type Vote = {
+export interface Vote {
   id: number
-  postId: number
-  voteType: 'Upvote' | 'Downvote'
+  post_id: number
+  member_id: number
+  vote_type: 'Upvote' | 'Downvote'
+  created_at: string
+  updated_at: string
 }

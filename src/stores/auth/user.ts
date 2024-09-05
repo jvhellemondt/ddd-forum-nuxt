@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
-import type { UserData } from '../../types/auth/User'
+import type { User } from '../../types/auth/User'
 import type { Maybe } from '../../types/Maybe'
 
 interface userStore {
-  userData: Maybe<UserData>
+  userData: Maybe<User>
 }
 
 export const useUsers = defineStore("users", {
@@ -16,7 +16,7 @@ export const useUsers = defineStore("users", {
     }
   },
   actions: {
-    setUser(user: UserData) { 
+    setUser(user: User) { 
       this.userData = user
     }
   }
