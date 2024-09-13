@@ -33,13 +33,13 @@ export const useApi = () => {
   return {
     posts: {
       async getPosts(): Post[] {
-        const listPostsEndpoint = 'http://localhost:8080/posts?sort=recent';
+        const listPostsEndpoint = `api/posts?sort=recent`;
         const response = await $fetch(listPostsEndpoint)
         return response.data.map(transformToCamelCase<object>)
       }
     },
-    async register(input: RegistrationInput) {
-      const registerEndpoint = 'http://localhost:8080/users/create';
+    async register(input: RegistrationInput) { 
+      const registerEndpoint = `api/users/create`;
       const body = transformToSnakeCase<object>(input)
       return await $fetch(registerEndpoint, {
         method: 'POST',

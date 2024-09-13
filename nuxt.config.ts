@@ -2,13 +2,16 @@
 
 const isProduction = process.env.NODE_ENV === 'production'
 const title = 'DDD-Forum'
-const url = isProduction ? 'http://localhost:3000' : 'http://localhost:3000'
+const url = isProduction ? 'https://www.coffee-link.app' : 'http://localhost:3000'
 const description = 'DDD-Forum | For all your DDD'
 const primaryColor = '#ff4200'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  routeRules: {
+    "/api/**": { proxy: import.meta.env.API_URL },
+  },
   ssr: true,
   srcDir: 'src/',
   css: ['@/assets/css/main.scss', '@unocss/reset/tailwind.css'],
