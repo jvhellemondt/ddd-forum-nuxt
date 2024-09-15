@@ -1,20 +1,29 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-const isProduction = process.env.NODE_ENV === 'production'
+import { Environment } from "./src/types/Environment.enum"
+
+const env = import.meta.env
+const isProduction = env.NODE_ENV === Environment.PRODUCTION
 const title = 'DDD-Forum'
-const url = isProduction ? 'https://www.coffee-link.app' : 'http://localhost:3000'
+const url = isProduction
+  ? 'https://www.coffee-link.app'
+  : 'http://localhost:3000'
 const description = 'DDD-Forum | For all your DDD'
 const primaryColor = '#ff4200'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: { enabled: !isProduction },
   routeRules: {
-    "/api/**": { proxy: import.meta.env.API_URL },
+    'api/**': {
+      proxy: `${env.API_URL}/**`,
+    }
   },
-  ssr: true,
   srcDir: 'src/',
-  css: ['@/assets/css/main.scss', '@unocss/reset/tailwind.css'],
+  css: [
+    '@/assets/css/main.scss',
+    '@unocss/reset/tailwind.css'
+  ],
   unocss: {
     preflight: true,
   },
@@ -24,7 +33,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
-    'nuxt-snackbar',
+    'nuxt-snackbar'
   ],
   snackbar: {
     top: true,
