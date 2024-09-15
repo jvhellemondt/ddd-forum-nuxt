@@ -1,5 +1,5 @@
 <template>
-  <PostsList :posts="posts" />
+  <PostsList :posts="posts.data" :status="posts.status" />
 </template>
 
 <script setup lang="ts">
