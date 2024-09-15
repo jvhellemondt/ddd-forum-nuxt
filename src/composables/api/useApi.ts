@@ -1,49 +1,25 @@
-import { snakeCase, camelCase } from 'lodash-es';
-import type { RegistrationInput } from '../../types/auth/register/RegistrationInput'
-
-const transformToSnakeCase = <T>(input: T): T => {
-  if (Array.isArray(input)) {
-    return input.map(item => transformToSnakeCase(item));
-  }
-  else if (input !== null && typeof input === 'object') {
-    return Object.fromEntries(
-      Object.entries(input).map(
-        ([key, value]) => [snakeCase(key), transformToSnakeCase(value)]
-      )
-    );
-  }
-  return input;
-};
-
-const transformToCamelCase = <T>(input: T): T => {
-  if (Array.isArray(input)) {
-    return input.map(item => transformToCamelCase(item));
-  }
-  else if (input !== null && typeof input === 'object') {
-    return Object.fromEntries(
-      Object.entries(input).map(
-        ([key, value]) => [camelCase(key), transformToCamelCase(value)]
-      )
-    );
-  }
-  return input;
-};
+import type { RegistrationInput } from '~/types/auth/register/RegistrationInput'
+import { transformToCamelCase } from '~/utils/transformToCamelCase'
+import { transformToSnakeCase } from '~/utils/transformToSnakeCase'
 
 export const useApi = () => {
   return {
     posts: {
       async getPosts(): Post[] {
-        const listPostsEndpoint = `api/posts?sort=recent`;
-        const response = await $fetch(listPostsEndpoint)
-        return response.data.map(transformToCamelCase<object>)
+        return useFetch("api/posts?sort=recent", {
+          key: 'api/posts?sort=recent',
+          transform: transformToCamelCase,
+          default: () => [],
+          server: false
+        })
       }
     },
-    async register(input: RegistrationInput) { 
-      const registerEndpoint = `api/users/create`;
+    async register(input: RegistrationInput) {
       const body = transformToSnakeCase<object>(input)
-      return await $fetch(registerEndpoint, {
+      return $fetch("api/users/create", {
         method: 'POST',
         body,
+        transform: transformToSnakeCase
       })
     }
   };
