@@ -24,6 +24,7 @@
     "nuxt-proxy": "^0.4.1",
     "nuxt-snackbar": "^1.1.2",
     "oxide.ts": "^1.1.0",
+    "sharp": "^0.33.5",
     "vue": "^3.5.5"
   },
   "devDependencies": {
