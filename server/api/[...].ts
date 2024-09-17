@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   const apiPrefix = 'api/';
   const path = req.url.slice(apiPrefix.length)
 
-  const url = new URL(path, baseUrl).toString()
+  const url = `${baseUrl}${path}`
   console.log({url})
 
   const response = await fetch(url, {
