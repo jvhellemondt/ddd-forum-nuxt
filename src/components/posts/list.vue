@@ -2,9 +2,9 @@
   <div class="flex flex-col gap-8">
     <template v-if="status.value === FetchStatus.SUCCESS">
 
-      <template v-if="!!posts.value.length">
+      <template v-if="Array.isArray(posts.value.data)">
 
-        <template v-for="post in posts.value" :key="post.title">
+        <template v-for="post in posts.value.data" :key="post.title">
           <div class="flex flex-row">
             <div class="mr-4 flex flex-col justify-center">
               <div class="flex justify-center">

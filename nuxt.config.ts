@@ -13,13 +13,10 @@ const primaryColor = '#ff4200'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: !isProduction },
-  routeRules: {
-    'api/**': {
-      proxy: `${env.API_URL}/**`,
-    }
-  },
+  // devtools: { enabled: !isProduction },
+  devtools: { enabled: false },
   srcDir: 'src/',
+  serverDir: 'server/',
   css: [
     '@/assets/css/main.scss',
     '@unocss/reset/tailwind.css'

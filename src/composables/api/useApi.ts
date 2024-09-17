@@ -6,17 +6,19 @@ export const useApi = () => {
   return {
     posts: {
       async getPosts(): Post[] {
-        return useFetch("api/posts?sort=recent", {
+        return useFetch("/api/posts", {
           key: 'api/posts?sort=recent',
           transform: transformToCamelCase,
           default: () => [],
-          server: false
+          query: {
+            sort: 'recent'
+          }
         })
       }
     },
     async register(input: RegistrationInput) {
       const body = transformToSnakeCase<object>(input)
-      return $fetch("api/users/create", {
+      return $fetch("/api/users/create", {
         method: 'POST',
         body,
         transform: transformToSnakeCase
