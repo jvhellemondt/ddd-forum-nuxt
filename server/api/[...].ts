@@ -5,7 +5,10 @@ export default defineEventHandler(async (event) => {
   const apiPrefix = 'api/';
   const path = req.url.slice(apiPrefix.length)
 
-  const response = await fetch(new URL(path, baseUrl).toString(), {
+  const url = new URL(path, baseUrl).toString()
+  console.log({url})
+
+  const response = await fetch(url, {
     method: req.method,
     headers: req.headers as HeadersInit,
     body: req.method !== 'GET' ? req : undefined,
