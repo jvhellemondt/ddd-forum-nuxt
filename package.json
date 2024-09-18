@@ -1,31 +1,42 @@
 {
-    "name": "nuxt-app",
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "build": "nuxt build",
-        "dev": "nuxt dev",
-        "generate": "nuxt generate",
-        "preview": "nuxt preview",
-        "postinstall": "nuxt prepare"
-    },
-    "dependencies": {
-        "nuxt": "^3.12.4",
-        "oxide.ts": "latest",
-        "vue": "latest"
-    },
-    "devDependencies": {
-        "sass-embedded": "^1.77.8",
-        "@biomejs/biome": "latest",
-        "@types/bun": "latest",
-        "@unocss/nuxt": "^0.62.1",
-        "@unocss/preset-wind": "latest",
-        "unocss": "^0.62.1"
-    },
-    "peerDependencies": {
-        "typescript": "^5.5.0"
-    },
-    "bun": {
-        "target": "esnext"
-    }
+  "name": "nuxt-app",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.8.0",
+    "@nuxtjs/i18n": "^8.5.3",
+    "@pinia/nuxt": "^0.5.4",
+    "date-fns": "^3.6.0",
+    "lodash-es": "^4.17.21",
+    "nuxt": "^3.13.1",
+    "nuxt-proxy": "^0.4.1",
+    "nuxt-snackbar": "^1.1.2",
+    "oxide.ts": "^1.1.0",
+    "sharp": "^0.33.5",
+    "vue": "^3.5.5"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^0.5.7",
+    "@types/bun": "^1.1.9",
+    "@types/lodash-es": "^4.17.12",
+    "@unocss/nuxt": "^0.62.3",
+    "@unocss/preset-wind": "^0.62.3",
+    "sass-embedded": "^1.78.0",
+    "unocss": "^0.62.3"
+  },
+  "bun": {
+    "target": "esnext"
+  }
 }

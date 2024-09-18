@@ -1,0 +1,12 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "bun run build"
+
+[deploy]
+startCommand = "bun .output/server/index.mjs"
+numReplicas = 1
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+sleepApplication = true
+region = "europe-west4"
+runtime = "V2"

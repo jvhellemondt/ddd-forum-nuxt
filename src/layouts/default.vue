@@ -1,5 +1,8 @@
 <template>
-  <main>
-    <NuxtPage />
-  </main>
+  <div>
+    <HeaderContainer />
+    <ContentContainer class="flex flex-col m-8">
+      <slot />
+    </ContentContainer>
+  </div>
 </template>

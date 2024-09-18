@@ -1,8 +1,13 @@
 <template>
-  <div>We're ready to go!</div>
+  <PostsList :posts="posts.data" :status="posts.status" />
 </template>
 
 <script setup lang="ts">
-const title = ref("Home");
-useSeoMeta({ title });
+import type { Post } from '~/types/Post'
+
+const title = ref('Home')
+useHeadSafe({ title })
+
+const api = useApi();
+const posts: Post[] = await api.posts.getPosts()
 </script>
