@@ -56,7 +56,7 @@ async function handleRegistrationSubmission(input: RegistrationInput): Promise<v
     spinner.toggle(false);
     const { data } = err
     snackbar.add({
-      title: data.error,
+      title: data.error.message,
       type: 'error',
       text: 'Something went wrong. Please try again.'
     })
